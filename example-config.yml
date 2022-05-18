@@ -1,0 +1,102 @@
+base_dir: /path/to/data/  # path to dataset on disk
+
+# batch size (meta-batch size for MAML)
+batch_size: 256
+
+early_stopping_patience: 50
+epochs: 300
+
+# after how many epochs the validation set is evaluated
+eval_every: 1
+
+# name of the experiment, will be part of the run directory name
+experiment_name: example-experiment
+
+# Defines whether during validation/testing the model is finetuned on the support set
+finetune: false
+finetune_epochs: 5
+finetune_lr: 0.01
+
+# defines whether the input and output values are absolute values, deltas, or both. Only makes sense for timeseries
+# tasks
+input_output_types:
+  input: values
+  output: values
+
+# Input variables.
+input_vars: [0]
+
+learning_rate: 0.0001
+
+# Meta-dataset to use
+meta_dataset: datasetname
+
+# Metrics to use in validation
+metric:
+- mse
+
+# Loss function
+loss_fn: mse
+
+# Defines whether early stopping is based on the mean or median validation metric across all tasks
+metric_aggregation: mean
+
+# Model type (lstm, feedforward, ...)
+model: feedforward
+
+# Number of parallel workers
+num_workers: 4
+
+# Optimizer in training and finetuning
+optimizer:
+  train: adam
+  finetune: sgd
+
+# Defines the number of time steps that are used to train and validate the model.
+# For non-timeseries tasks, set this to 1
+predict_last_n: 1
+
+# Size of the query set in evaluation
+query_size: 100
+
+# directory where experiments are stored
+run_dir: /path/to/workingdir
+
+# Defines how often the model is saved
+save_every: 1
+
+# Random seed
+seed: 1
+
+# Length of the input sequence. Set to 1 for non-timeseries tasks.
+seq_length: 1
+
+# Size of the support set in finetuning.
+support_size: 10
+
+# Target variables. For each variable, you can specify one or more time steps to be predicted.
+# For non-timeseries tasks, use 0.
+target_vars:
+  varname:
+    - 0
+
+# Test datasets
+test_datasets:
+  - dsname_1
+  - dsname_2
+
+# If True, the whole timeseries will be viewed as one sample. Else, each time step is a sample. Set to false for
+# non-timeseries tasks
+timeseries_is_sample: false
+
+# Train datasets
+train_datasets:
+  - dsname_3
+
+# Training setup (supervised, maml, ...)
+training_setup: supervised
+
+# Validation datasets
+val_datasets: 
+  - dsname_4
+  - dsname_5

@@ -1,0 +1,50 @@
+base_dir: experiments/nl-rlc/data/rlc_dataset-resistor_range1_14-capacitor_range100_800-inductor_range20_140
+batch_size: 16
+early_stopping_patience: 30
+epochs: 100
+eulerode_config:
+  state_space:
+  - vc
+  - il
+  activation: tanh
+eval_every: 1
+experiment_name: rlc-ode-3traintraj-supervised-ode50-lr1e-4-bs16-seqlen256-seed0
+finetune: false
+finetune_epochs: 500
+finetune_lr: 5e-05
+hidden_size: 50
+input_output_types:
+  input: values
+  output: values
+input_vars:
+- vin
+learning_rate: 0.0001
+loss_fn: mse
+lstm_initial_forget_bias: 3
+meta_dataset: rlc
+metric:
+- mse
+- rmse
+metric_aggregation: mean
+model: eulerode
+num_workers: 6
+optimizer:
+  train: adam
+  finetune: sgd
+predict_last_n: 256
+query_size: 6000
+run_dir: experiments/rlc/runs/supervised
+save_every: 1
+seed: 0
+seq_length: 256
+support_size: 0
+target_vars:
+  vc:
+  - 0
+test_datasets: []
+timeseries_is_sample: false
+train_datasets:
+- train/R:3.0_L:5e-05_C:2.7e-07.npy#0#3
+training_setup: supervised
+val_datasets:
+- train/R:3.0_L:5e-05_C:2.7e-07.npy#3#5

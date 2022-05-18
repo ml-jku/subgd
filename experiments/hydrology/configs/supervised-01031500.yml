@@ -1,0 +1,49 @@
+base_dir: experiments/hydrology/data/multibasin-01031500
+batch_size: 64
+dropout: 0.2
+early_stopping_patience: 6
+epochs: 50
+eval_every: 1
+experiment_name: hydrology-01031500-supervised-60support-seed0
+finetune: false
+finetune_epochs: 1
+finetune_lr: 0.01
+hidden_size: 20
+input_output_types:
+  input: values
+  output: values
+input_vars:
+- prcp(mm/day)
+- srad(W/m2)
+- tmax(C)
+- vp(Pa)
+learning_rate: 0.005
+loss_fn: mse
+lstm_initial_forget_bias: 3
+meta_dataset: hbvedu
+metric:
+- nse
+metric_aggregation: mean
+model: lstm
+num_workers: 4
+optimizer:
+  train: adam
+  finetune: sgd
+predict_last_n: 1
+query_size: 9999999
+run_dir: experiments/hydrology/runs/supervised-400basin01031500/
+save_every: 1
+seed: 0
+seq_length: 365
+support_size: 60
+target_noise_std: 0.2
+target_vars:
+  qsim_fit:
+  - 0
+test_datasets: []
+timeseries_is_sample: false
+train_datasets:
+- 01031500_hbvedu_sim.csv#1990-10-01#1999-09-30
+training_setup: supervised
+val_datasets:
+- 01031500_hbvedu_sim.csv#1981-10-01#1989-09-30

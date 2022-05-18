@@ -1,0 +1,281 @@
+base_dir: experiments/miniimagenet/data/  # path to dataset on disk
+
+cnn_image_size: 84  # size of input images
+
+# architecture specification for model 'imagecnn'
+cnn_config:
+  - activation: relu
+    kernel_size: 3
+    out_channels: 32
+    batch_norm: True
+    padding: 1
+    max_pool: 2
+  - activation: relu
+    kernel_size: 3
+    out_channels: 32
+    batch_norm: True
+    padding: 1
+    max_pool: 2
+  - activation: relu
+    kernel_size: 3
+    out_channels: 32
+    batch_norm: True
+    padding: 1
+    max_pool: 2
+  - activation: relu
+    kernel_size: 3
+    out_channels: 32
+    batch_norm: True
+    padding: 1
+    max_pool: 2
+
+# batch size (meta-batch size for MAML)
+batch_size: 256
+
+early_stopping_patience: 10
+epochs: 200
+
+# after how many epochs the validation set is evaluated
+eval_every: 1
+
+# name of the experiment, will be part of the run directory name
+experiment_name: ms-s-sv-adam-seed1_pretraining_CV
+
+# Defines whether during validation/testing the model is finetuned on the support set
+finetune: false
+finetune_epochs: 1000
+finetune_lr: 0.001
+
+# If not empty pca will be applied to the optimzer
+ig_pca_file: None
+
+# defines whether the input and output values are absolute values, deltas, or both. Only makes sense for timeseries
+# tasks
+input_output_types:
+  input: values
+  output: values
+
+# Input variables. For images, these are the indices of the channels to use.
+input_vars: [0, 1, 2]
+
+is_label_shared: true
+
+learning_rate: 0.001
+
+# Meta-dataset to use
+meta_dataset: miniimagenet
+
+# Number of classes in classification tasks. Can also be a dict with keys "train" and "finetune"
+classification_n_classes: 64
+
+# Metrics to use in validation
+metric:
+- accuracy
+
+# Loss function
+loss_fn: crossentropy
+
+# Defines whether early stopping is based on the mean or median validation metric across all tasks
+metric_aggregation: mean
+
+# Model type (lstm, feedforward, imagecnn, ...)
+model: imagecnn
+
+# Number of parallel workers
+num_workers: 6
+
+# Optimizer in training and finetuning
+optimizer:
+  train: adam
+  finetune: sgd # unused
+
+# Defines the number of time steps that are used to train and validate the model.
+# For non-timeseries tasks, set this to 1
+predict_last_n: 1
+
+# Size of the query set in evaluation
+query_size: 999999999
+
+# directory where experiments are stored
+run_dir: experiments/miniimagenet/supervised/miniimagenet_s
+
+# Defines how often the model is saved
+save_every: 1 # -1 means only improvements are saved, else save ever x epoch
+store_training_path: False # stores the model after every optimizer step
+
+# Random seed
+seed: 1
+
+# Length of the input sequence. Set to 1 for non-timeseries tasks.
+seq_length: 1
+
+# Size of the support set in finetuning.
+support_size: 5
+
+# Target variables. For each variable, you can specify one or more time steps to be predicted.
+# For non-timeseries tasks, use 0.
+target_vars:
+  target:
+    - 0
+
+# If True, the whole timeseries will be viewed as one sample. Else, each time step is a sample. Set to false for
+# non-timeseries tasks
+timeseries_is_sample: false
+train_val_split: 0.8 # this is used in supervised training (-> train/val classes should be the same)
+
+# Training setup (supervised, maml, ...)
+training_setup: supervised
+
+# Use weighting along principal components
+use_pca_weights: true
+
+train_datasets : ['n07747607',
+  'n03400231',
+  'n02074367',
+  'n01910747',
+  'n04596742',
+  'n03047690',
+  'n07697537',
+  'n13054560',
+  'n02108551',
+  'n04243546',
+  'n02108915',
+  'n04443257',
+  'n04604644',
+  'n13133613',
+  'n02795169',
+  'n04067472',
+  'n04296562',
+  'n02089867',
+  'n03854065',
+  'n03888605',
+  'n03207743',
+  'n04275548',
+  'n03347037',
+  'n02111277',
+  'n03062245',
+  'n03017168',
+  'n01704323',
+  'n07584110',
+  'n02108089',
+  'n04515003',
+  'n02091831',
+  'n01558993',
+  'n02747177',
+  'n02606052',
+  'n09246464',
+  'n03924679',
+  'n04509417',
+  'n03337140',
+  'n03220513',
+  'n04258138',
+  'n01749939',
+  'n04612504',
+  'n02120079',
+  'n02966193',
+  'n01532829',
+  'n06794110',
+  'n03838899',
+  'n02113712',
+  'n01843383',
+  'n02105505',
+  'n04389033',
+  'n03908618',
+  'n04435653',
+  'n02101006',
+  'n02165456',
+  'n03476684',
+  'n02687172',
+  'n03676483',
+  'n01770081',
+  'n02823428',
+  'n02457408',
+  'n03527444',
+  'n03998194',
+  'n04251144']
+
+test_datasets : ['n02110341',
+  'n07613480',
+  'n04149813',
+  'n02099601',
+  'n02871525',
+  'n02116738',
+  'n02443484',
+  'n03127925',
+  'n04146614',
+  'n03544143',
+  'n03272010',
+  'n02219486',
+  'n01930112',
+  'n02129165',
+  'n04418357',
+  'n03775546',
+  'n01981276',
+  'n03146219',
+  'n02110063',
+  'n04522168']
+  
+val_datasets : ['n07747607',
+  'n03400231',
+  'n02074367',
+  'n01910747',
+  'n04596742',
+  'n03047690',
+  'n07697537',
+  'n13054560',
+  'n02108551',
+  'n04243546',
+  'n02108915',
+  'n04443257',
+  'n04604644',
+  'n13133613',
+  'n02795169',
+  'n04067472',
+  'n04296562',
+  'n02089867',
+  'n03854065',
+  'n03888605',
+  'n03207743',
+  'n04275548',
+  'n03347037',
+  'n02111277',
+  'n03062245',
+  'n03017168',
+  'n01704323',
+  'n07584110',
+  'n02108089',
+  'n04515003',
+  'n02091831',
+  'n01558993',
+  'n02747177',
+  'n02606052',
+  'n09246464',
+  'n03924679',
+  'n04509417',
+  'n03337140',
+  'n03220513',
+  'n04258138',
+  'n01749939',
+  'n04612504',
+  'n02120079',
+  'n02966193',
+  'n01532829',
+  'n06794110',
+  'n03838899',
+  'n02113712',
+  'n01843383',
+  'n02105505',
+  'n04389033',
+  'n03908618',
+  'n04435653',
+  'n02101006',
+  'n02165456',
+  'n03476684',
+  'n02687172',
+  'n03676483',
+  'n01770081',
+  'n02823428',
+  'n02457408',
+  'n03527444',
+  'n03998194',
+  'n04251144']

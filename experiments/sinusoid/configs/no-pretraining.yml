@@ -1,0 +1,54 @@
+batch_size: 64
+dataset_max_size: 200
+dropout: 0.0
+early_stopping_patience: 10
+epochs: 1
+eval_every: 1
+experiment_name: sinusoid-no-pretraining
+finetune: false
+finetune_epochs: 1
+finetune_lr: 0.01
+input_output_types:
+  input: values
+  output: values
+input_vars:
+- 0
+learning_rate: 0.0
+loss_fn: mse
+meta_dataset: sinusoid
+metric:
+- mse
+metric_aggregation: mean
+model: feedforward
+num_workers: 5
+optimizer:
+  train: adam
+  finetune: sgd
+output_layer:
+  activation: relu
+  dropout: 0.0
+  hiddens:
+  - 40
+  - 40
+  - 1
+  batch_norm: false
+plot_n_figures: 0
+predict_last_n: 1
+query_size: 100
+run_dir: experiments/sinusoid/runs/
+save_every: 1
+seed: 0
+seq_length: 1
+support_size: 1
+target_vars:
+  target:
+  - 0
+test_datasets:
+- 0.1#5.0#0.0#3.141592654#-5.0#5.0
+timeseries_is_sample: false
+train_datasets:
+- 0.1#5.0#0.0#3.141592654#-5.0#5.0
+training_setup: supervised
+val_datasets:
+- 0.1#5.0#0.0#3.141592654#-5.0#5.0
+val_n_random_datasets: 50
