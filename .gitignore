@@ -1,0 +1,11 @@
+.ipynb_checkpoints/
+.vscode/
+.idea/
+__pycache__/
+build/
+dist/
+
+.coverage
+.DS_Store
+
+_site/
