@@ -47,7 +47,7 @@ This paper has been accepted to the Conference on Lifelong Learning Agents (CoLL
 
 ```bib
 @article{gauch2022subgd,
-  title={Caravan - A global community dataset for large-sample hydrology},
+  title={Few-Shot Learning by Dimensionality Reduction in Gradient Space},
   author={Gauch, Martin and Beck, Maximilian and Adler, Thomas and Kotsur, Dmytro and Fiel, Stefan and 
           Eghbal-zadeh, Hamid and Brandstetter, Johannes and Kofler, Johannes and Holzleitner, Markus and 
           Zellinger, and Klotz, Daniel and Hochreiter, Sepp and Lehner, Sebastian},
