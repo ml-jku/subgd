@@ -32,7 +32,7 @@ The interactive plot below illustrates how SubGD exploits important update direc
 SubGD identifies the subspace directly from the training trajectories. These are the trajectories of SGD on the individual training tasks. Each trajectory is represented by the vector pointing from the starting point of training to the end point. From the resulting vectors we then calculate the [auto-correlation matrix](https://en.wikipedia.org/wiki/Autocorrelation#Auto-correlation_of_random_vectors). The eigendecomposition of this matrix yields the $$r$$ eigenvectors with the highest eigenvalues. In practice, you can think of this procedure as a PCA on the uncentered training trajectories. 
 
 {:refdef: style="text-align: center;"}
-![image not found (illustration of subgd)](/assets/subgd.png){:width="400px"}
+![image not found (illustration of subgd)](/assets/subgd-pca.png){:width="500px"}
 {: refdef}
 
 The most dominant eigenvectors (those with the highest eigenvalues) are the ones that were most important for fine-tuning; the subordinate eigenvectors were least important. Finally, we train on the test task, restricting gradient descent to the subspace of dominant eigenvectors, i.e., to the directions that are important to adapt to new tasks.
@@ -42,7 +42,7 @@ We could naively implement this restriction as projecting the gradient in the su
 These ideas directly lead to the following update rule:
 
 {:refdef: style="text-align: center;"}
-![image not found (illustration of subgd)](/assets/subgd_update.svg){:width="100%"}
+![image not found (subgd update rule)](/assets/subgd_update.svg){:width="100%"}
 {: refdef}
 
 The update rule corresponds to the following operations on the gradient:
