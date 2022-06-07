@@ -2,7 +2,7 @@
 
 Code to reproduce the experiments in the paper ["Few-Shot Learning by Dimensionality Reduction in Gradient Space"](#) (accepted to [CoLLAs 2022](http://lifelong-ml.cc/)).
 
-**Blog post**: coming soon!
+**Blog post**: [https://ml-jku.github.io/subgd](https://ml-jku.github.io/subgd)
 
 ![SubGD illustration](subgd.png)
 
@@ -50,7 +50,7 @@ This paper has been accepted to the Conference on Lifelong Learning Agents (CoLL
   title={Few-Shot Learning by Dimensionality Reduction in Gradient Space},
   author={Gauch, Martin and Beck, Maximilian and Adler, Thomas and Kotsur, Dmytro and Fiel, Stefan and 
           Eghbal-zadeh, Hamid and Brandstetter, Johannes and Kofler, Johannes and Holzleitner, Markus and 
-          Zellinger, and Klotz, Daniel and Hochreiter, Sepp and Lehner, Sebastian},
+          Zellinger, Werner and Klotz, Daniel and Hochreiter, Sepp and Lehner, Sebastian},
   journal={arXiv preprint, accepted to Conference on Lifelong Learning Agents 2022}
   year={2022},
 }
