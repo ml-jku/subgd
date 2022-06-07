@@ -2,13 +2,13 @@
 layout: default
 title: "Few-Shot Learning by Dimensionality Reduction in Gradient Space"
 description: Blog post
-date:   2022-06-04 18:00:00 +0200
+date:   2022-06-07 20:00:00 +0200
 usemathjax: true
 ---
 
 <link rel="stylesheet" href="assets/css/accordion.css">
 
-This blog post explains the paper **[Few-Shot Learning by Dimensionality Reduction in Gradient Space](https://arxiv.org/)**, which introduces **SubGD**, a novel few-shot learning algorithm (presented at CoLLAs 2022).
+This blog post explains the paper **Few-Shot Learning by Dimensionality Reduction in Gradient Space**, which introduces **SubGD**, a novel few-shot learning algorithm (presented at CoLLAs 2022).
 
 SubGD is a few-shot learning method that restricts fine-tuning to a low-dimensional parameter subspace. This reduces model complexity and increases sample efficiency. SubGD identifies the subspace through the most important update directions during fine-tuning on training tasks. 
 
@@ -76,14 +76,14 @@ Still, in the cases where the effective ranks saturate, SubGD allows to adapt sy
 
 ## Additional Material
 
-**Paper**: [https://arxiv.org/](https://arxiv.org/)
+**Paper**: Coming soon
 
 **Code on GitHub**: [https://github.com/ml-jku/subgd](https://github.com/ml-jku/subgd)
 
 
 ## Contact
 
-gauch(at)ml.jku.at
+gauch (at) ml.jku.at
 
 This blog post was written by Martin Gauch, Maximilian Beck, Thomas Adler, Dmytro Kotsur, Stefan Fiel, Hamid Eghbal-zadeh, Johannes Brandstetter, Johannes Kofler, Markus Holzleitner,
 Werner Zellinger, Daniel Klotz, Sepp Hochreiter, and Sebastian Lehner.
