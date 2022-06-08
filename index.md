@@ -8,7 +8,7 @@ usemathjax: true
 
 <link rel="stylesheet" href="assets/css/accordion.css">
 
-This blog post explains the paper **Few-Shot Learning by Dimensionality Reduction in Gradient Space**, which introduces **SubGD**, a novel few-shot learning algorithm (presented at CoLLAs 2022).
+This blog post explains the paper **[Few-Shot Learning by Dimensionality Reduction in Gradient Space](http://arxiv.org/abs/2206.03483)**, which introduces **SubGD**, a novel few-shot learning algorithm (presented at CoLLAs 2022).
 
 SubGD is a few-shot learning method that restricts fine-tuning to a low-dimensional parameter subspace. This reduces model complexity and increases sample efficiency. SubGD identifies the subspace through the most important update directions during fine-tuning on training tasks. 
 
@@ -76,7 +76,7 @@ Still, in the cases where the effective ranks saturate, SubGD allows to adapt sy
 
 ## Additional Material
 
-**Paper**: Coming soon
+**Paper**:  [http://arxiv.org/abs/2206.03483](http://arxiv.org/abs/2206.03483)
 
 **Code on GitHub**: [https://github.com/ml-jku/subgd](https://github.com/ml-jku/subgd)
 
