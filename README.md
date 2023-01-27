@@ -1,6 +1,6 @@
 # Few-Shot Learning by Dimensionality Reduction in Gradient Space
 
-Code to reproduce the experiments in the paper ["Few-Shot Learning by Dimensionality Reduction in Gradient Space"](https://arxiv.org/abs/2206.03483) (accepted to [CoLLAs 2022](https://lifelong-ml.cc/)).
+Code to reproduce the experiments in the paper ["Few-Shot Learning by Dimensionality Reduction in Gradient Space"](https://proceedings.mlr.press/v199/gauch22a.html) (published at [CoLLAs 2022](https://lifelong-ml.cc/)).
 
 **Blog post**: [https://ml-jku.github.io/subgd](https://ml-jku.github.io/subgd)
 
@@ -43,18 +43,22 @@ _Note_: For technical reasons, this will finetune on the validation set and eval
 
 ## Citation
 
-This paper has been accepted to the Conference on Lifelong Learning Agents (CoLLAs) 2022. While the conference proceedings do not yet exist, we recommend the following citation:
+This paper has been published in the proceedings of the Conference on Lifelong Learning Agents (CoLLAs) 2022.
 
 ```bib
-@misc{gauch2022subgd,
-  title={Few-Shot Learning by Dimensionality Reduction in Gradient Space},
-  author={Gauch, Martin and Beck, Maximilian and Adler, Thomas and Kotsur, Dmytro and Fiel, Stefan and 
-          Eghbal-zadeh, Hamid and Brandstetter, Johannes and Kofler, Johannes and Holzleitner, Markus and 
-          Zellinger, Werner and Klotz, Daniel and Hochreiter, Sepp and Lehner, Sebastian},
-  journal={arXiv preprint, accepted to Conference on Lifelong Learning Agents 2022},
-  year={2022},
-  eprint={arXiv:2206.03483}
+@inproceedings{gauch22subgd,
+  title = 	 {Few-Shot Learning by Dimensionality Reduction in Gradient Space},
+  author =       {Gauch, Martin and Beck, Maximilian and Adler, Thomas and Kotsur, Dmytro and Fiel, Stefan and Eghbal-zadeh, Hamid and Brandstetter, Johannes and Kofler, Johannes and Holzleitner, Markus and Zellinger, Werner and Klotz, Daniel and Hochreiter, Sepp and Lehner, Sebastian},
+  booktitle = 	 {Proceedings of The 1st Conference on Lifelong Learning Agents},
+  pages = 	 {1043--1064},
+  year = 	 {2022},
+  editor = 	 {Chandar, Sarath and Pascanu, Razvan and Precup, Doina},
+  volume = 	 {199},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {8},
+  publisher =    {PMLR},
 }
+
 ```
 
 ## Documentation
